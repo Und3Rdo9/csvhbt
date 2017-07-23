@@ -1,0 +1,38 @@
+.language-switcher{
+	
+	@include vertical-align;
+	&__list{
+		list-style: none;
+		margin:0;
+		padding:0;
+		&__item{
+			text-transform: uppercase;
+			font-weight: bold;
+			display: inline-block; 
+			&__link{
+				margin:0 0.15rem;
+				display: inline-block;
+				padding-left:0;
+				padding-right:0;
+				text-align: center;
+				width: 2rem;
+				height: 2rem;
+				max-height:2rem;
+				text-transform: uppercase;
+				border:$tim-button-border-width solid $tim-button-primary-color;
+				text-decoration: none;
+				color:$tim-button-primary-color;
+				background:$tim-button-primary-background-color;
+				transition-property:color, border-color, background-color;
+				transition-duration:.3s;
+				font-size: 0.666rem;
+				line-height: 3;
+				&:hover, &:focus, &:active{
+					text-decoration: none;
+					color:darken($tim-button-primary-color, $tim-button-color-change);
+					border-color:darken($tim-button-primary-color, $tim-button-color-change);
+				}
+			}
+		}
+	}
+}

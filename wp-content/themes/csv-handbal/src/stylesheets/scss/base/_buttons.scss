@@ -1,0 +1,59 @@
+$tim-button-color:$tim-base-color !default;
+$tim-button-primary-color:$tim-primary-color !default;
+$tim-button-primary-background-color:white !default;
+
+$tim-button-secondary-color:$tim-secondary-color !default;
+$tim-button-border-radius:2em !default;
+$tim-button-border-width:1px !default;
+
+$tim-button-color-change:10% !default;
+
+$tim-button-vertical-spacing:2em !default;
+
+.button{
+	@include sgl-body($sgl-base-font-size, "rem");
+	@include sgl-min-height(2);
+	text-transform: uppercase;
+	display: inline-block;
+	padding:0.75rem $tim-button-vertical-spacing;
+	margin:0 $tim-button-vertical-spacing;
+	//@include sgl-margins();
+	border:$tim-button-border-width solid $tim-button-primary-color;	
+	text-decoration: none;
+	color:$tim-button-primary-color;
+	background:$tim-button-primary-background-color;
+	transition-property:color, border-color, background-color;
+	transition-duration:.3s;
+	&:hover, &:focus, &:active{
+		text-decoration: none;
+		color:darken($tim-button-primary-color, $tim-button-color-change);
+		border-color:darken($tim-button-primary-color, $tim-button-color-change);
+	}
+	&--rounded{
+		border-radius:$tim-button-border-radius;
+	}
+	&--inversed{
+		border:none;
+		background-color: $tim-button-primary-color;
+		color:white;
+		&:hover, &:focus, &:active{
+			background-color: lighten($tim-button-primary-color, $tim-button-color-change);
+			color:white;
+		}
+
+	}
+	&--secondary{
+		border-color:$tim-button-secondary-color;
+		color:$tim-button-secondary-color;
+		&.button--inversed{
+			background-color:$tim-button-secondary-color;
+			color:white;
+			&:hover, &:focus, &:active{
+			background-color: lighten($tim-button-secondary-color, $tim-button-color-change);
+			}
+		}
+	}
+	&--lowercase{
+		text-transform: none;
+	}
+}

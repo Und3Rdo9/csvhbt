@@ -1,0 +1,33 @@
+$tim-list-disc-color:$tim-secondary-color !default;
+
+.list{
+	margin: 0; 
+	padding: 0; 
+	
+	li{
+		@include sgl-body($sgl-base-font-size, "rem");
+	}
+	&--unstyled{
+		list-style: none;
+	}
+	&--styled{
+		list-style: none;
+		list-style-position:inside;
+		padding-left: 1em;
+		li {
+		  	list-style: none;
+		}
+		li:before {
+			  /* For a round bullet */
+			  content: '\2022';
+			  display: block;
+			  position: relative;
+			  max-width: 0;
+			  max-height: 0;
+			  left:-1em;
+			  top: 0;
+			  color:$tim-list-disc-color;
+			  
+		}
+	}
+}

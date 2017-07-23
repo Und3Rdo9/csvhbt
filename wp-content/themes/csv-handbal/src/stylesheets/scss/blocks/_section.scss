@@ -1,0 +1,30 @@
+.section{
+	@include sgl-margins-multiple(3);
+	&--medium{
+		@include sgl-margins-multiple(2);
+	}
+	&--small{
+		@include sgl-margins-multiple(1);
+	}
+	&__title{
+	   @include sgl-heading(2, "rem");
+	   //@include sgl-margins();
+	   @include sgl-margins-multiple(2);
+	   text-align: center;
+	   position: relative;
+	   &__ornament{
+	   		
+	   		bottom:-0.25em;
+	   		@include horizontal-align;
+	   		position: absolute;
+	   		display: block;
+	   		width:2em;
+	   		height:1px;
+	   		background-color: $tim-primary-color;
+	   }
+	}
+	&__subtitle{
+		@include sgl-heading(1, "rem");
+		@include sgl-margins-multiple(1);
+	}
+}

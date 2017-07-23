@@ -1,0 +1,40 @@
+.service{
+	display: flex;
+	flex-direction: column;
+	@include sgl-margins-multiple(2);
+	&:last-child{
+		margin-bottom:0;
+	}
+	@include breakpoint(medium){
+		margin-bottom:0;
+	}
+
+	&__title{
+		order:2;
+		@include sgl-heading(1, "rem");
+		@include sgl-margins();
+		color:$tim-primary-color;
+		text-align: center;
+	}
+	&__image-container{
+		order:1;
+		@include sgl-height($sgl-base-font-size, "em", 3);
+		@include sgl-margins();
+		position: relative;
+		&__image{
+			color:$tim-secondary-color;
+			@include sgl-height($sgl-base-font-size, "em", 3);
+			width:auto;
+			max-height:100%;
+			max-width:100%;
+			
+	    	@include align-both();
+		}
+		
+	}
+	
+	&__description{
+		order:3;
+
+	}
+}

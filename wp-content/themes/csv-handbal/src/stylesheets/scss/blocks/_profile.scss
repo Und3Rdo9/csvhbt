@@ -1,0 +1,13 @@
+$tim-profile-image-height-in-lines:12;
+
+.profile{
+	&__image-container{
+		@include sgl-height($sgl-base-font-size, "em", $tim-profile-image-height-in-lines);
+		@include sgl-margins();
+		&__image{
+			@include autosize-in-container;
+			@include align-both();
+		}
+	}
+
+}

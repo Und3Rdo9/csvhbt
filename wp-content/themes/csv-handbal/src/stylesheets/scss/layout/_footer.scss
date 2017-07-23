@@ -1,0 +1,19 @@
+.footer{
+	border-top:1px $tim-border-color solid;
+	@include sgl-element($sgl-base-font-size, "rem", 2);
+	@include sgl-padding-multiple(2);
+	@include sgl-margins();
+	&__logo-container{
+		@include sgl-height($sgl-base-font-size, $sgl-base-unit, $lines: 5);
+		@include sgl-margins-multiple(2);
+			&__logo{
+			@include autosize-in-container();
+			@include align-both();
+			display: block;
+		}
+	}
+	&__text{
+		@include sgl-body($sgl-base-font-size, "rem");
+	}
+	
+}

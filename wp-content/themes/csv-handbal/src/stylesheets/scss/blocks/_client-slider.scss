@@ -1,0 +1,51 @@
+$client-slider-bottom-margin-lines:3;
+
+.client-slider{
+
+	// flickity overrides
+	.flickity-page-dots{
+		left:0;
+		top:100%;
+		bottom:auto;
+		@include sgl-body($sgl-base-font-size, "rem");
+		@include sgl-element($sgl-base-font-size, $sgl-base-unit, $client-slider-bottom-margin-lines);
+	}
+
+	list-style: none;
+	width: 100%;
+	@include sgl-margins-multiple($client-slider-bottom-margin-lines);
+	&__item{
+		width: 100%;
+		@include grid-column-gutter();
+		
+
+
+		@include breakpoint(medium){
+			width: 50%;
+		}
+		@include breakpoint(large){
+			width: 25%;
+		}
+		&__image-container{
+			@include sgl-height($sgl-base-font-size, "em", 6);
+			position: relative;
+			&__image{
+				display: block;
+				width: auto;
+				max-width: 100%;
+				height:auto;
+				max-height: 100%;
+				@include align-both;
+			}
+		}
+		
+		&__title{
+			text-align: center;
+			text-transform: uppercase;
+			@include sgl-heading(0);
+
+		}
+	}
+
+
+}
